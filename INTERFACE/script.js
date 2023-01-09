@@ -4,8 +4,8 @@ var srchBox = document.querySelector(".search-box");
 var srchTxt = document.querySelector(".search-text");
 var srchBtn = document.querySelector(".search-btn");
 var srchBtnHover = document.querySelector(".search-box:hover.dark");
-var labelBtn = document.querySelector(".label");
-var labelBallBtn = document.querySelector(".label.ball");
+var labelBtn = document.querySelector(".label");            // AJEITAR
+var labelBallBtn = document.querySelector(".label .ball");   // AJEITAR
 
 chk.addEventListener('change', function() {
     document.body.classList.toggle('dark');
