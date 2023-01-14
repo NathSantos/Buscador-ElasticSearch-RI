@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(75deg, #3debb0, #8956F3 );
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle {
+    position: absolute;
+    background: white;
+    min-height: 60vh;
+    height: 94%;
+    width: 94%;
+    margin-bottom: 12px;
+    background: linear-gradient(to right bottom, 
+        rgba(255, 255, 255, 0.7), 
+        rgba(255,255,255,0.3));
+    border-radius: 10px;
+}
+
+.container {
+    position: absolute;
+    top: 5%;
+    left: 94%;
+    transform: translate(-50%, -50%);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #0a1b2d;
+    font-size: 22px;
+    letter-spacing: 1px;
+    border-right: 3px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 1s steps(7),     /* steps -> número de caracteres da palavra */
+        cursor .4s step-end infinite alternate;
+}
+
+/*efeito cursor piscando*/
+@keyframes cursor {
+    50% { border-color: transparent; }
+}
+
+/*efeito digitação*/
+@keyframes typing {
+    from { width: 0; }
+}
+
+.search-box {
+    position: absolute;
+    top: 7%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    background: #0a1b2d;
+    height: 53px;
+    border-radius: 40px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    padding: 0 6px;
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #f0f5fb;
+    font-size: 16px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.lupa-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0a1b2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+}
+
+.lupa-img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lupa-btn:hover{
+    background: #25405f;
+}
+
+.lupa-btn:active {
+    transform: scale(0.98);
+    box-shadow: -4px 3px 10px 1px rgba(0, 0, 0, 0.24);
+}
+
+::-webkit-input-placeholder {
+    color: #25405f;
+}
+
+.light-dark {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #0a1b2d;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 22px;
+    width: 55px;
+    transform: scale(1.1);
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(33px);
+}
+
+.fa-moon {
+    color: #391ed3;
+    margin-left: 6px;
+}
+
+.fa-sun {
+    color: #3debb0;
+    margin-right: 6px;
+}
+
+body.dark {
+    background: linear-gradient(75deg, #1b8561, #4c11cd );
+}
+
+h1.dark {
+    color: #fff;
+}
+
+.search-box.dark {
+    background: #fff;
+}
+
+.search-text.dark {
+    color: #0a1b2d;
+}
+
+.lupa-btn.dark {
+    background: #fff;
+}
+
+.search-box:hover.dark .lupa-btn {
+    background: #dfdfe0;
+}
+
+.label.dark {
+    background-color: #fff;
+}
+
+.label .ball.dark {
+    background-color: #0a1b2d;
+}

@@ -12,7 +12,7 @@ body {
 
 .container {
     position: absolute;
-    top: 38%;
+    top: 36%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex; 
@@ -70,7 +70,7 @@ h1 {
     margin-left: 10px;
 }
 
-.search-btn {
+.lupa-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -78,19 +78,29 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0px;
 }
 
-.search-box:hover .search-btn {
+.lupa-img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lupa-btn:hover{
     background: #25405f;
+}
+
+.lupa-btn:active {
+    transform: scale(0.98);
+    box-shadow: -4px 3px 10px 1px rgba(0, 0, 0, 0.24);
 }
 
 ::-webkit-input-placeholder {
     color: #25405f;
-}
-
-#lupa-light {
-    height: 20px;
-    width: 20px;
 }
 
 .light-dark {
@@ -165,11 +175,11 @@ h1.dark {
     color: #0a1b2d;
 }
 
-.search-btn.dark {
+.lupa-btn.dark {
     background: #fff;
 }
 
-.search-box:hover.dark .search-btn {
+.search-box:hover.dark .lupa-btn {
     background: #dfdfe0;
 }
 
