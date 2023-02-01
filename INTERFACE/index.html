@@ -15,12 +15,21 @@
             </div>
 
             <div class="search-box">
-                <input type="text" class="search-text" placeholder="Pesquisar" size="41" autocomplete="off">
+                <input type="text" class="search-text" id="searchbar" 
+                placeholder="Pesquisar" size="41" autocomplete="off">
+
+                <button type="button" class="lupa-btn" onclick="search()">
+                    <img src="images/lupa_light.svg" alt="Lupa" class="lupa-img" />
+                </button>
+
+                <!--
                 <a href="show_docs.html">
-                    <button type="button" class="lupa-btn">
+                    <button type="button" class="lupa-btn" onclick="search()">
                         <img src="images/lupa_light.svg" alt="Lupa" class="lupa-img" />
                     </button>
                 </a>
+                -->
+
             </div>
 
             <div class="light-dark">
@@ -36,6 +45,7 @@
         </main>
 
         <script src="js/script.js"></script>
+        <script src="js/elasticsearch.js"></script>
         <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
     </body>
 </html>
