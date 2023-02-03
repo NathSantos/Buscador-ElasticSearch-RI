@@ -7,6 +7,7 @@
         <title>Rainbow</title>            
         <link rel="stylesheet" href="css/style.css">
         <link rel="website icon" type="png" href="images/website_icon.png">
+        <script src="js/require.js" data-main="js/elasticsearch"></script>
     </head>
     <body>
         <main>
@@ -14,17 +15,18 @@
                 <h1>Rainbow</h1>
             </div>
 
-            <div class="search-box">
+            <div class="search-box" id="box">
+
                 <input type="text" class="search-text" id="searchbar" 
                 placeholder="Pesquisar" size="41" autocomplete="off">
 
-                <button type="button" class="lupa-btn" onclick="search()">
+                <button type="button" class="lupa-btn" onclick="busca()">
                     <img src="images/lupa_light.svg" alt="Lupa" class="lupa-img" />
                 </button>
 
                 <!--
                 <a href="show_docs.html">
-                    <button type="button" class="lupa-btn" onclick="search()">
+                    <button type="button" class="lupa-btn" onclick="busca()">
                         <img src="images/lupa_light.svg" alt="Lupa" class="lupa-img" />
                     </button>
                 </a>
@@ -45,7 +47,8 @@
         </main>
 
         <script src="js/script.js"></script>
-        <script src="js/elasticsearch.js"></script>
+        <script src="js/require.js"></script>
+        <script type="module" src="js/elasticsearch.js"></script>
         <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
     </body>
 </html>
