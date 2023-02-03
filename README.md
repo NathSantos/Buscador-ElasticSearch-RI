@@ -4,3 +4,6 @@
 
 
 - Tutorial LambdaMart: https://github.com/lezzago/LambdaMart
+
+
+- Tutorial para resolver problema CORS no Chrome: https://www.youtube.com/watch?v=3yACsnV30N8
