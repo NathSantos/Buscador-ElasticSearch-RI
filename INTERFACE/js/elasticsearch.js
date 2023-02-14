@@ -1,10 +1,8 @@
-console.log("CODIGO ELASTIC");
-
 const { Client } = require('es7')
 
 const client = new Client({ node: 'http://localhost:9200' })
 
-client.info(console.log)
+//client.info(console.log)
 
 client.search({
   index: 'regis_collection',
@@ -17,10 +15,6 @@ client.search({
   if (err) console.log(err)
   else console.log(result.body.hits)
 })
-
-
-
-//var input = document.getElementById('searchbar').value
 
 
 // console.log(result.body.hits) - printa os docs resultantes

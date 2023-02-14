@@ -28,4 +28,3 @@ chk.addEventListener('change', function() {
     labelBtn.classList.toggle('dark');
     labelBallBtn.classList.toggle('dark');
 });
-
