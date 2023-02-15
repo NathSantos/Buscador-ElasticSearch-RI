@@ -8,15 +8,13 @@ A seguir estão as instruções de como proceder para utilizar o código, de aco
 
 ## Instalando e executando o ElasticSearch
 
- - Instale o ElasticSearch: https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html
+ - Siga o passo a passo a seguir para instalar e executar o ElasticSearch de acordo com o seu sistema: https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html
  
- - Para executar o ElasticSearch basta ir, pelo terminal, no diretório da pasta 'elasticsearch-7.17.8' e digitar o comando: ```.\bin\elasticsearch.bat```
- 
- - Para verificar se o ElasticSearch está corretamente executado, digite ```localhost:9200``` na url de um web browser e verifique se a conexão foi realmente estabelecida
+ - Para verificar se o ElasticSearch está corretamente executado, digite ```localhost:9200``` na url de um web browser e verifique se a conexão foi realmente estabelecida (obs: 9200 é a porta padrão do elasticsearch, caso você tenha alterado essa porta, digite o número da nova porta)
  
  ## Indexando documentos no ElasticSearch
  
- - Para este trabalho, utilizamos a base de documentos da Petrobras: https://github.com/Petroles/regis-collection/tree/master/documents
+ - Para este trabalho, foi utilizado a base de documentos da Petrobras: https://github.com/Petroles/regis-collection/tree/master/documents
  
  - Após ter baixado os documentos e salvado eles em uma pasta (ex: 'regis_collection/documents'), abra o arquivo 'indexing_documents.ipynb'
  
