@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(75deg, #3debb0, #8956F3 );
+}
+
+.rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+    height: 94%;
+    background: white;
+    background: linear-gradient(to right bottom, 
+        rgba(255, 255, 255, 0.7), 
+        rgba(255,255,255,0.3));
+    border-radius: 10px;
+}
+
+
+/* TÍTULO DA PÁGINA */
+
+
+.title {
+    position: absolute;
+    top: 6%;
+    left: 91%;
+    transform: translate(-50%, -50%);
+    display: flex; 
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #0a1b2d;
+    font-size: 40px;
+    letter-spacing: 1px;
+    top: 2%;
+    left: 2%;
+}
+
+
+/* BARRA DE PESQUISA */
+
+
+.search-box {
+    position: absolute;
+    top: 7%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    background: #0a1b2d;
+    height: 50px;
+    width: 600px;
+    border-radius: 40px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+}
+
+.busca-class {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #f0f5fb;
+    font-size: 17px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.lupa-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0a1b2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+}
+
+.lupa-img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lupa-btn:hover{
+    background: #25405f;
+}
+
+.lupa-btn:active {
+    transform: scale(0.98);
+    box-shadow: -4px 3px 10px 1px rgba(0, 0, 0, 0.24);
+}
+
+::-webkit-input-placeholder {
+    color: #25405f;
+}
+
+
+/* TABELA */
+
+
+#tabela-resultados {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 400px;
+    border-radius: 10px;
+    overflow-y: scroll;
+  }
+  
+  #corpo-tabela tr {
+    background-color: rgba(255, 255, 255, 0.425);
+  }
+  
+  #corpo-tabela tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.425);
+  }
+
+  #tabela-resultados th {
+    opacity: 0; 
+  }  
+  
+  #corpo-tabela td {
+    padding: 10px;
+    border-bottom: 1px solid;
+  }
+
+  #corpo-tabela td:first-child, #corpo-tabela th:first-child {
+    font-family: 'Poppins', sans-serif; /* Troca a fonte da primeira coluna (ID) */
+    color: #0a1b2d;
+  }
+  
+  #corpo-tabela td:nth-child(2), #corpo-tabela th:nth-child(2) {
+    font-family: 'Poppins', sans-serif; /* Troca a fonte da segunda coluna (FILENAME) */
+    color: #0a1b2d;
+  }
+  

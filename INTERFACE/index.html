@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">                      
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Buscador Rainbow</title>
+    <link rel="website icon" type="png" href="images/website_icon.png">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="rectangle">
+
+      <div class="title">
+        <h1>Rainbow</h1>
+      </div>
+
+      <div class="search-box">
+        <input type="text" class="busca-class" id="search" placeholder="Pesquisar" size="51" autocomplete="off">
+          <button type="button" id="btn-search" class="lupa-btn" onclick="enviar()">
+              <img src="images/lupa_light.svg" alt="Lupa" class="lupa-img" />
+          </button>
+      </div>
+
+      <table id="tabela-resultados">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FILENAME</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
+      </table>
+        
+      <script>
+        function preencherTabela(resultados) {
+            var linhas = "";
+            resultados.forEach(function (doc) {
+                linhas += "<tr><td>" + doc._id + "</td><td>" + doc._source.filename + "</td></tr>";
+            });
+            $("#corpo-tabela").html(linhas);
+        }
+
+        function enviar() {
+            const termoDeBusca = document.getElementById("search").value;
+            console.log(termoDeBusca);
+
+            axios.get("/buscar", {
+                params: {
+                    termo: termoDeBusca
+                }
+            })
+            .then(function(response) {
+                console.log("sucesso da requisição Axios");
+                console.log(response.data);
+                preencherTabela(response.data);
+            })
+            .catch(function(error) {
+                console.log("erro da requisição Axios");
+                console.error(error);
+            });
+
+            console.log("depois da requisição Axios");
+        }
+
+        document.getElementById("search").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                enviar();
+            }
+        });
+
+      </script>
+    
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
