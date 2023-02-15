@@ -1,9 +1,102 @@
 # Trabalho-RI-elastic-search
 
-- Documentos a serem indexados no elastic search: https://github.com/Petroles/regis-collection/tree/master/documents
+Este trabalho consiste em um buscador que pesquisa consultas digitadas na interface pelo usuário e as busca na base de documentos indexados no ElasticSearch.
 
+A versão utilizada do ElasticSearch foi a 7.17.8.
 
-- Tutorial LambdaMart: https://github.com/lezzago/LambdaMart
+A seguir estão as instruções de como proceder para utilizar o código, de acordo com seu sistema:
 
+# Linux
 
-- Tutorial para resolver problema CORS no Chrome: https://www.youtube.com/watch?v=3yACsnV30N8
+[x] - *a preencher*
+
+# Windows
+
+## Instalando e executando o ElasticSearch
+
+ - Baixe o ElasticSearch no seu sistema: https://www.elastic.co/guide/en/elasticsearch/reference/7.17/zip-windows.html
+ 
+ - Para executar o ElasticSearch basta ir, pelo terminal, no diretório da pasta 'elasticsearch-7.17.8' e digitar o comando: ```.\bin\elasticsearch.bat```
+ 
+ - Para verificar se o ElasticSearch está corretamente executado, digite ```localhost:9200``` na url de um web browser e verifique se a conexão foi realmente estabelecida
+ 
+ ## Indexando documentos no ElasticSearch
+ 
+ - Para este trabalho, utilizamos a base de documentos da Petrobras: https://github.com/Petroles/regis-collection/tree/master/documents
+ 
+ - Após ter baixado os documentos e salvado eles em uma pasta (ex: 'regis_collection/documents'), abra o arquivo 'indexing_documents.ipynb'
+ 
+ - Na seguinte célula, modifique o "path_to_data" para o diretório da pasta onde estão os documentos baixados:
+ 
+``` 
+position_start_id = 6 
+
+def id_converter(id):
+    id = id[position_start_id:]
+    return id
+
+def text_converter(text):
+    text = text.replace("\"", " ")
+    text = text.replace("\n", " ")
+    return text
+#put here the path for regis-collection-master
+path_to_data = 'regis_collection/documents'
+
+files_names = os.listdir(path_to_data)
+```
+
+  - Em seguida, rode todas as células do notebook e aguarde a indexação de todos os documentos (obs: no código, estamos indexando os documentos no índice ```regis_collection``` mas caso você queira, pode trocar o nome no próprio notebook).
+  
+  - Ao concluir a indexação dos documentos, a seguinte célula deve retornar um documento presente no índice ```regis_collection```:
+ 
+ ```
+ es.get(index="regis_collection", id=x)
+ ```
+
+## Abrindo e utilizando o Buscador
+
+  - Após os documentos terem sido indexados, estamos prontos para usar o buscador. Entretanto, antes precisamos instalar alguns frameworks e bibliotecas que estão sendo utilizados no código. 
+  
+  - Assumindo que você tenha o Node.js e o npm (Node Package Manager) instalados no seu computador, você deve instalar os seguintes pacotes _**caso ainda não os tenha em seu sistema**_. Para isso, execute os seguintes comandos dentro do diretório principal do trabalho (obs: no trabalho foram utilizadas as versões ```v18.4.0``` do Node e ```9.3.1``` do npm):
+  
+ ```
+ npm install jquery
+ ```
+ 
+ ```
+ npm install ajax
+ ```
+ 
+ ```
+ npm install axios
+ ```
+ 
+ ```
+ npm install express
+ ```
+ 
+ ```
+ npm install path
+ ```
+
+  - Após a instalação dos pacotes, navegue no terminal até a pasta ```INTERFACE```:
+  
+  ```
+  cd INTERFACE
+  ```
+  
+  - Em seguida, execute o servidor:
+  
+  ```
+  node elastic_server.js
+  ```
+  
+  - Caso tudo tenha sido executado corretamente, a mensagem "_Servidor rodando na porta 4000_" deve aparecer no terminal.
+  
+  - Com o servidor e o elasticsearch sendo executados, você já pode abrir o buscador em ```localhost:4000``` e realizar sua busca.
+  
+  - Caso você esteja utilizando a base de documentos da Petrobras, os campos <title> do arquivo ```queries.xml``` servem como consultas que podem ser feitas no buscador.
+ 
+## Finalizando o servidor e o elasticsearch
+
+  - Quando você desejar terminar a conexão com o servidor e com o elasticsearch, basta apertar ```Ctrl+C``` no terminal onde está sendo executado cada um e a conexão se encerrará.
