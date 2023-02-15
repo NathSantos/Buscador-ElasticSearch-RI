@@ -2,19 +2,13 @@
 
 Este trabalho consiste em um buscador que pesquisa consultas digitadas na interface pelo usuário e as busca na base de documentos indexados no ElasticSearch.
 
-A versão utilizada do ElasticSearch foi a 7.17.8.
+A versão utilizada do ElasticSearch foi a ```7.17.8```.
 
 A seguir estão as instruções de como proceder para utilizar o código, de acordo com seu sistema:
 
-# Linux
-
-[x] - *a preencher*
-
-# Windows
-
 ## Instalando e executando o ElasticSearch
 
- - Baixe o ElasticSearch no seu sistema: https://www.elastic.co/guide/en/elasticsearch/reference/7.17/zip-windows.html
+ - Instale o ElasticSearch: https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html
  
  - Para executar o ElasticSearch basta ir, pelo terminal, no diretório da pasta 'elasticsearch-7.17.8' e digitar o comando: ```.\bin\elasticsearch.bat```
  
