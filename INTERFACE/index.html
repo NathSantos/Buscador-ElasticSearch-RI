@@ -68,6 +68,13 @@
             if (event.key === "Enter") {
                 event.preventDefault();
                 enviar();
+                var headers = document.getElementsByTagName('th');
+                for (var i = 0; i < headers.length; i++) {
+                  headers[i].style.opacity = 1;
+                  headers[i].style.fontFamily = 'Poppins';
+                  headers[i].style.color = '#0a1b2d';
+                  headers[i].style.fontSize = '16px';
+                }
             }
         });
 
