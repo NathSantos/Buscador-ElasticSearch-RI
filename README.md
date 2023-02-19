@@ -20,7 +20,7 @@ A seguir estão as instruções de como proceder para utilizar o código, de aco
  
  - Na seguinte célula, modifique o "path_to_data" para o diretório da pasta onde estão os documentos baixados:
  
-``` 
+```Python 
 position_start_id = 6 
 
 def id_converter(id):
@@ -41,7 +41,7 @@ files_names = os.listdir(path_to_data)
   
   - Ao concluir a indexação dos documentos, a seguinte célula deve retornar um documento presente no índice ```regis_collection```:
  
- ```
+ ```Python 
  es.get(index="regis_collection", id=x)
  ```
 
@@ -52,35 +52,35 @@ files_names = os.listdir(path_to_data)
   - Assumindo que você tenha o Node.js e o npm (Node Package Manager) instalados no seu computador, você deve instalar os seguintes pacotes _**caso ainda não os tenha em seu sistema**_. Para isso, execute os seguintes comandos dentro do diretório principal do trabalho (obs: no trabalho foram utilizadas as versões ```v18.4.0``` do Node e ```9.3.1``` do npm):
   
  ```
- npm install jquery
+ $ npm install jquery
  ```
  
  ```
- npm install ajax
+ $ npm install ajax
  ```
  
  ```
- npm install axios
+ $ npm install axios
  ```
  
  ```
- npm install express
+ $ npm install express
  ```
  
  ```
- npm install path
+ $ npm install path
  ```
 
   - Após a instalação dos pacotes, navegue no terminal até a pasta ```INTERFACE```:
   
   ```
-  cd INTERFACE
+  $ cd INTERFACE
   ```
   
   - Em seguida, execute o servidor:
   
   ```
-  node elastic_server.js
+  $ node elastic_server.js
   ```
   
   - Caso tudo tenha sido executado corretamente, a mensagem "_Servidor rodando na porta 4000_" deve aparecer no terminal.
