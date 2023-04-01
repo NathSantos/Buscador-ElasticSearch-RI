@@ -16,7 +16,7 @@ A seguir estão as instruções de como proceder para utilizar o código, de aco
  
  - Para este trabalho, foi utilizado a base de documentos da Petrobras: https://github.com/Petroles/regis-collection/tree/master/documents
  
- - Após ter baixado os documentos e salvado eles em uma pasta (ex: 'regis_collection/documents'), abra o arquivo 'indexing_documents.ipynb'
+ - Após ter baixado os documentos e salvado eles em uma pasta (ex: 'regis_collection/documents'), abra o arquivo 'indexing_documents.py'
  
  - Na seguinte célula, modifique o "path_to_data" para o diretório da pasta onde estão os documentos baixados:
  
